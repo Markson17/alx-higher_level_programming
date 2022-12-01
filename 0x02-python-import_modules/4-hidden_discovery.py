@@ -1,8 +1,7 @@
 #!/usr/bin/python3
 if __name__ == "__main__":
+    import sys
     import hidden_4
-
-    name_list = dir(hidden_4)
-    for name in name_list:
-        if not name.startswith("__"):
-            print(name)
+    for n in dir(hidden_4):
+        if n[:2] != "__":
+            print(n)
