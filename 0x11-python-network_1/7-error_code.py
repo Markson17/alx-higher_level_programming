@@ -1,12 +1,13 @@
 #!/usr/bin/python3
 """fetches https://intranet.hbtn.io/status"""
-import requests
 import sys
+import requests
+
 
 if __name__ == "__main__":
-    x = requests.get(sys.argv[1])
+    req = requests.get(sys.argv[1])
     try:
-        x.raise_for_status()
-        print(x.text)
+        req.raise_for_status()
+        print(req.text)
     except Exception as e:
-        print("Error code: {}".format(x.status_code))
+        print("Error code: {}".format(req.status_code))
