@@ -1,8 +1,9 @@
 #!/usr/bin/python3
 """Uses the GitHub API to display a"""
-import sys
 import requests
 from requests.auth import HTTPBasicAuth
+import sys
+
 
 
 if __name__ == "__main__":
