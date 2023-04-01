@@ -14,20 +14,20 @@ def find_peak(A):
     def recursive(A, left=0, right=len(A) - 1):
         """helper recursive function"""
 
-        mid = (left + right) // 2
+        middle = (left + right) // 2
 
-        # check if the middle element is greater than its neighbors
-        if ((mid == 0 or A[mid - 1] <= A[mid]) and
-                (mid == len(A) - 1 or A[mid + 1] <= A[mid])):
-            return A[mid]
+        # check if the middledle element is greater than its neighbors
+        if ((middle == 0 or A[middle - 1] <= A[middle]) and
+                (middle == len(A) - 1 or A[middle + 1] <= A[middle])):
+            return A[middle]
 
-        # If the left neighbor of `mid` is greater than the middle element,
+        # If the left neighbor of `middle` is greater than the middledle element,
         # find the peak recursively in the left sublist
-        if mid - 1 >= 0 and A[mid - 1] > A[mid]:
-            return recursive(A, left, mid - 1)
+        if middle - 1 >= 0 and A[middle - 1] > A[middle]:
+            return recursive(A, left, middle - 1)
 
-        # If the right neighbor of `mid` is greater than the middle element,
+        # If the right neighbor of `middle` is greater than the middledle element,
         # find the peak recursively in the right sublist
-        return recursive(A, mid + 1, right)
+        return recursive(A, middle + 1, right)
 
     return recursive(A)
